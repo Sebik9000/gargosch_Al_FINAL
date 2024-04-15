@@ -7,6 +7,10 @@ hraci = ["Hráč1", "Hráč2"]
 #Je tam hrac: 0 aby hra začala s nula body pro oba hráče
 skore = {hrac: 0 for hrac in hraci}
 
+#Variable vitez najde hráče s nejvyšším celkovým skórem, používá funkci max() která najde největší hodnotu
+#klíč lambda řekne funkci max() aby porovnala hráče[X] podle skore takže jako variable vitez se uloží jméno hráče s největším skóre
+vitez = max(skore, key=lambda x: skore[x])
+
 #Definivání funkce kostky která používá modul random aby generovala čísla (mezi 1,6) funkce vrátí-(odevzdá) hodnotu tohoto hodu
 def hod_kostkou():
     return random.randit(1,6)
