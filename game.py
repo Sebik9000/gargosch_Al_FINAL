@@ -4,6 +4,7 @@ import random
 #Variable hraci slouží pro jmenování Hráče1 a Hráče2
 hraci = ["Hráč1", "Hráč2"]
 #Variable skore je slovník určen podle typu závorek (může se později přidat více hráčů díky tomu že jsem použil slovník) vytváří aktuální hodnoty skóre pro každého hráče
+#Je tam hrac: 0 aby hra začala s nula body pro oba hráče
 skore = {hrac: 0 for hrac in hraci}
 
 #Definivání funkce kostky která používá modul random aby generovala čísla (mezi 1,6) funkce vrátí-(odevzdá) hodnotu tohoto hodu
@@ -19,6 +20,14 @@ def body(cislo):
     else:
         return cislo
 
-#Definování funkce samotné hry, vytvoří skóre pro hru pro oba hráče hry pomocí slovníku, ty hodnoty v slovníku jsou aktuální hodnoty skóre pro každého hráče
-#V řádku 22 je 0 aby oba hráči začali hru se 0 skóre.
+#Definování funkce samotné hry
 def chicago():
+#Udělá smyčku kde se kód bude opakovat 6 krát
+   for kolo in range(7):
+       for hrac in hraci:
+           body = 0
+           for _ in range(3):
+               hod = hod_kostkou()
+               body += bodovani(hod)
+            skore[hrac] += body
+            print(f"{hrac}) hodil {body} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
