@@ -30,14 +30,18 @@ def chicago():
 #Udělá smyčku kde se kód bude opakovat 6 krát
    for kolo in range(7):
        for hrac in hraci:
-           body = 0
+           body_hrac = 0
            for _ in range(3):
                hod = hod_kostkou()
-               body += bodovani(hod)
-            skore[hrac] += body
-            print(f"{hrac}) hodil {body} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
+               body_hrac += body(hod)
+            skore[hrac] += body_hrac
+            print(f"{hrac}) hodil {body_hrac} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
            
 #Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
 print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
 
-hra()
+chicago()
+
+#Variable vitez najde hráče s nejvyšším celkovým skórem po tom co hra skončí, používá funkci max() která najde největší hodnotu
+#klíč lambda řekne funkci max() aby porovnala hráče[X] podle skore takže jako variable vitez se uloží jméno hráče s největším skóre
+vitez = max(skore, key=lambda x: skore[x])
