@@ -33,11 +33,12 @@ def chicago():
            skore[hrac] += body_hrac
            print(f"{hrac}) hodil {body_hrac} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
            
-#Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
-print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
-
+#Zavolá samotnou hru
 chicago()
 
 #Variable vitez najde hráče s nejvyšším celkovým skórem po tom co hra skončí, používá funkci max() která najde největší hodnotu
 #klíč lambda řekne funkci max() aby porovnala hráče[X] podle skore takže jako variable vitez se uloží jméno hráče s největším skóre
 vitez = max(skore, key=lambda x: skore[x])
+
+#Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
+print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
