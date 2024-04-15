@@ -3,6 +3,7 @@ import random
 
 #Variable hraci slouží pro jmenování Hráče1 a Hráče2
 hraci = ["Hráč1", "Hráč2"]
+
 #Variable skore je slovník určen podle typu závorek (může se později přidat více hráčů díky tomu že jsem použil slovník) vytváří aktuální hodnoty skóre pro každého hráče
 #Je tam hrac: 0 aby hra začala s nula body pro oba hráče
 skore = {hrac: 0 for hrac in hraci}
@@ -35,3 +36,8 @@ def chicago():
                body += bodovani(hod)
             skore[hrac] += body
             print(f"{hrac}) hodil {body} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
+           
+#Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
+print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
+
+hra()
