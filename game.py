@@ -34,8 +34,8 @@ def chicago():
            for _ in range(3):
                hod = hod_kostkou()
                body_hrac += body(hod)
-            skore[hrac] += body_hrac
-            print(f"{hrac}) hodil {body_hrac} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
+           skore[hrac] += body_hrac
+           print(f"{hrac}) hodil {body_hrac} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
            
 #Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
 print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
