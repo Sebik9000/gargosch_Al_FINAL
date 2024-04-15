@@ -14,3 +14,8 @@ def body(cislo):
     else:
         return cislo
 
+#Definování funkce samotné hry, vytvoří skóre pro hru pro oba hráče hry pomocí slovníku, ty hodnoty v slovníku jsou aktuální hodnoty skóre pro každého hráče
+#V řádku 22 je 0 aby oba hráči začali hru se 0 skóre.
+def chicago():
+    hraci = ["Hráč1", "Hráč2"]
+    skore = {hrac: 0 for hrac in hraci}
