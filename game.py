@@ -1,18 +1,18 @@
-#Načte modul který obsahuje funkce náhodnosti
+#Načte modul, který obsahuje funkce náhodnosti
 import random
 
-#Variable hraci slouží pro jmenování Hráče1 a Hráče2
+#Variable "hraci" slouží pro jmenování Hráče1 a Hráče2
 hraci = ["Hráč1", "Hráč2"]
 
-#Variable skore je slovník určen podle typu závorek (může se později přidat více hráčů díky tomu že jsem použil slovník) vytváří aktuální hodnoty skóre pro každého hráče
+#Variable skore je slovník, který vytváří aktuální hodnoty pro každého hráče
 #Je tam hrac: 0 aby hra začala s nula body pro oba hráče
 skore = {hrac: 0 for hrac in hraci}
 
-#Definivání funkce kostky která používá modul random aby generovala čísla (mezi 1,6) funkce vrátí-(odevzdá) hodnotu tohoto hodu
+#Definivání funkce "hod_kostkou", která používá modul random pro generování čísel mezi 1 a 6, funkce vrátí hodnotu tohoto hodu
 def hod_kostkou():
     return random.randint(1,6)
 
-#Definování funkce bodování která vezme ty čísla co nahoře kód vyhodil a vrátí-(odevzdá) jejich hodnotu, ale u jedničky odevzdá 100 a u 6 odevzdá 60.
+#Definování funkce "body", která vezme číslo vygenerované funkcí "hod_kostkou" a vrátí jeho hodnotu. U jedničky vrátí 100 a u šestky 60
 def body(cislo):
     if cislo == 1:
         return 100
@@ -27,6 +27,7 @@ def chicago():
    for kolo in range(7):
        for hrac in hraci:
            body_hrac = 0
+#Smyčka, která se opakuje 3 krát pro 3 hody kostkou
            for _ in range(3):
                hod = hod_kostkou()
                body_hrac += body(hod)
