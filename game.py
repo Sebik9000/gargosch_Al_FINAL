@@ -32,7 +32,7 @@ def chicago():
                hod = hod_kostkou()
                body_hrac += body(hod)
            skore[hrac] += body_hrac
-           print(f"{hrac}) hodil {body_hrac} bodů  v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
+           print(f"{hrac}) hodil {body_hrac} bodů v {kolo + 1}. kole. Celkové skóre je {skore[hrac]}.")
            
 #Zavolá samotnou hru
 chicago()
