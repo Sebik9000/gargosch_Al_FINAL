@@ -8,6 +8,10 @@ hraci = ["Hráč1", "Hráč2"]
 #Je tam hrac: 0 aby hra začala s nula body pro oba hráče
 skore = {hrac: 0 for hrac in hraci}
 
+print("Vítám vás ve hře chicago, v této hře jsou dva hráči, oba hází tři krát za sebou a mají 3 kostky, ale hodí jedničku tak se jim přičte 100 bodů, a když šestku tak 60 bodů.")
+
+print("Dosažený počet bodů za všechny hody se zapíše a hráč s nejvíce body vyhrává.")
+
 #Definivání funkce "hod_kostkou", která používá modul random pro generování čísel mezi 1 a 6, funkce vrátí hodnotu tohoto hodu
 def hod_kostkou():
     return random.randint(1,6)
