@@ -45,5 +45,5 @@ chicago()
 #klíč lambda řekne funkci max() aby porovnala hráče[X] podle skore takže jako variable vitez se uloží jméno hráče s největším skóre
 vitez = max(skore, key=lambda x: skore[x])
 
-#Použije funkci print způsob formátování řetěžce je f-string (proto tam je to f) 
+#Použije funkci print způsob formátování řetěžce je f-string který funguje s {} listy
 print(f"Vítězem je {vitez} s celkovým skóre {skore[vitez]} bodů!")
